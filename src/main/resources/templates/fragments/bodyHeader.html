@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div class="bg-info" th:fragment="bodyHeader">
+    <p class="text-center pt-5">
+        <a href="/" class="text-white font-weight-bold fs-3">oEmbed Test</a>
+    </p>
+
+    <div class="pt-3 pb-3">
+        <form th:action="@{/oembed/info}" th:object="${urlDto}" method="post"
+            class="row g-3 ">
+            <div class="col-1"></div>
+            <div class="col-9">
+                <input type="text" th:field="*{url}" class="form-control"
+                    th:errorclass="field-error" placeholder="Input Url">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-warning">확인</button>
+            </div>
+            <div th:if="${#fields.hasGlobalErrors()} and !${#fields.hasErrors('url')}"
+                    class="text-center">
+                <p class="field-error fw-bold fs-6" th:each="err:${#fields.globalErrors()}" th:text="${err}">
+                    전체 오류 메시지
+                </p>
+            </div>
+            <div class="field-error fw-bold fs-6 text-center" th:errors="*{url}">
+                url 오류
+            </div>
+        </form>
+    </div>
+</div>

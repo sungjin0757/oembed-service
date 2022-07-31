@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div class="bg-light mt-3">
+        <ul class="responseContainer list-group p-4">
+            <li th:if="${oembedDto.title} != null" class="list-group-item">
+                <div class="row" >
+                    <div class="col-4 fw-bold">
+                        title
+                    </div>
+                    <div th:text="${oembedDto.title}" class="col-8 fw-bold">
+                        title
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.type != null}">
+                <div class="row">
+                    <div class="col-4">
+                        type
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.type}">
+                        type
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.version != null}">
+                <div class="row">
+                    <div class="col-4">
+                        version
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.version}">
+                        version
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.authorName != null}">
+                <div class="row">
+                    <div class="col-4">
+                        authorName
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.authorName}">
+                        authorName
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.authorUrl != null}">
+                <div class="row">
+                    <div class="col-4">
+                        authorUrl
+                    </div>
+                    <div class="col-8">
+                        <a class="col-8" th:href="@{${oembedDto.authorUrl}}" th:text="${oembedDto.authorUrl}">
+                            authorUrl
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.providerName != null}">
+                <div class="row">
+                    <div class="col-4">
+                        providerName
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.providerName}">
+                        providerName
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.cacheAge != null}">
+                <div class="row">
+                    <div class="col-4">
+                        cacheAge
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.cacheAge}">
+                        cacheAge
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.thumbnailUrl != null}">
+                <div class="row">
+                    <div class="col-4">
+                        thumbnailUrl
+                    </div>
+                    <div class="col-8">
+                        <a th:href="@{${oembedDto.thumbnailUrl}}" th:text="${oembedDto.thumbnailUrl}">
+                            thumbnailUrl
+                        </a>
+                        <br/>
+                        <br/>
+                        <img th:src="@{${oembedDto.thumbnailUrl}}"/>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.thumbnailWidth != null}">
+                <div class="row">
+                    <div class="col-4">
+                        thumbnailWidth
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.thumbnailWidth}">
+                        thumbnailWidth
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.thumbnailHeight != null}">
+                <div class="row">
+                    <div class="col-4">
+                        thumbnailHeight
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.thumbnailHeight}">
+                        thumbnailHeight
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.url != null}">
+                <div class="row">
+                    <div class="col-4">
+                        url
+                    </div>
+                    <div class="col-8" >
+                        <a th:href="@{${oembedDto.url}}" th:text="${oembedDto.url}">
+                            url
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.html != null}">
+                <div class="row">
+                    <div class="col-4">
+                        html
+                    </div>
+                    <div class="col-8">
+                        <div th:text="${oembedDto.html}">
+                            html
+                        </div>
+                        <br/>
+                        <br/>
+                        <div th:utext="${oembedDto.html}">
+                            html
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.width != null}">
+                <div class="row">
+                    <div class="col-4">
+                        width
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.width}">
+                        width
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item"
+                th:if="${oembedDto.height != null}">
+                <div class="row">
+                    <div class="col-4">
+                        height
+                    </div>
+                    <div class="col-8" th:text="${oembedDto.height}">
+                        height
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
